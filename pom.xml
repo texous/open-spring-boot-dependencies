@@ -5,7 +5,7 @@
 
     <groupId>com.sdstc</groupId>
     <artifactId>sdstc-spring-boot-dependencies</artifactId>
-    <version>${project.release.version}</version>
+    <version>2.0.0</version>
     <packaging>pom</packaging>
 
     <name>sdstc-spring-boot-dependencies</name>
@@ -17,6 +17,7 @@
         <file.encoding>UTF-8</file.encoding>
         <java.version>1.8</java.version>
         <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
+        <spring-boot-maven-plugin.version>2.2.5.RELEASE</spring-boot-maven-plugin.version>
         <spring-boot-admin.version>2.0.1</spring-boot-admin.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <mybatis-plus-boot-starter.version>3.4.1</mybatis-plus-boot-starter.version>
@@ -40,16 +41,18 @@
         <mysql-connector.version>8.0.19</mysql-connector.version>
         <maven-compiler-plugin>3.8.0</maven-compiler-plugin>
         <maven-jar-plugin>3.2.0</maven-jar-plugin>
-        <commons-text-version>1.9</commons-text-version>
+        <commons-text.version>1.9</commons-text.version>
         <log4j.version>2.18.0</log4j.version>
         <slf4j-version>1.7.36</slf4j-version>
         <commons-io.version>2.11.0</commons-io.version>
         <modelmapper.version>3.1.0</modelmapper.version>
         <aspectjweaver.version>1.9.9.1</aspectjweaver.version>
         <redisson.version>3.17.3</redisson.version>
-
-        <spring.profiles.active>local</spring.profiles.active>
-        <project.release.version>2.0.0-SNAPSHOT</project.release.version>
+        <zxing-core.version>3.5.0</zxing-core.version>
+        <guava.version>31.1-jre</guava.version>
+        <servlet-api.version>2.5</servlet-api.version>
+        <spring-security-jwt.version>1.1.1.RELEASE</spring-security-jwt.version>
+        <jjwt.version>0.9.1</jjwt.version>
     </properties>
 
     <profiles>
@@ -63,13 +66,6 @@
             <id>sit</id>
             <properties>
                 <spring.profiles.active>sit</spring.profiles.active>
-            </properties>
-        </profile>
-        <profile>
-            <id>release</id>
-            <properties>
-                <spring.profiles.active>sit</spring.profiles.active>
-                <project.release.version>2.0.0</project.release.version>
             </properties>
         </profile>
     </profiles>
@@ -149,6 +145,7 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-text</artifactId>
+                <version>${commons-text.version}</version>
             </dependency>
 
             <!-- lettuce pool 缓存连接池 -->
@@ -188,6 +185,13 @@
                         <groupId>com.google.guava</groupId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
 
             <dependency>
@@ -251,12 +255,60 @@
                 <version>${slf4j-version}</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${com.lombok.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>core</artifactId>
+                <version>${zxing-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-jwt</artifactId>
+                <version>${spring-security-jwt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -276,14 +328,5 @@
             <url>${REMOTE_SNAPSHOTS}</url>
         </snapshotRepository>
     </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>central</id>
-            <name>central</name>
-            <!-- 配置仓库的地址 -->
-            <url>${REMOTE_PUBLIC}</url>
-        </repository>
-    </repositories>
 
 </project>
