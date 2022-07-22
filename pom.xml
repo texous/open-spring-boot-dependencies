@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sdstc</groupId>
+    <artifactId>sdstc-spring-boot-dependencies</artifactId>
+    <version>${project.release.version}</version>
+    <packaging>pom</packaging>
+
+    <name>sdstc-spring-boot-dependencies</name>
+    <description>The is sdstc-spring-boot-dependencies</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <file.encoding>UTF-8</file.encoding>
+        <java.version>1.8</java.version>
+        <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
+        <spring-boot-admin.version>2.0.1</spring-boot-admin.version>
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+        <mybatis-plus-boot-starter.version>3.4.1</mybatis-plus-boot-starter.version>
+        <mybatis-plus-generator.version>3.4.1</mybatis-plus-generator.version>
+        <swagger.version>2.9.2</swagger.version>
+        <p6spy.version>3.8.0</p6spy.version>
+        <commons-collections4.version>4.2</commons-collections4.version>
+        <com.lamx.disruptor.version>3.3.11</com.lamx.disruptor.version>
+        <com.alibaba.fastjson.version>1.2.79</com.alibaba.fastjson.version>
+        <org.postgresql.version>42.2.5</org.postgresql.version>
+        <commons-pool2.version>2.6.1</commons-pool2.version>
+        <commons-codec.version>1.13</commons-codec.version>
+        <com.ctrip.framework.apollo.version>1.1.1</com.ctrip.framework.apollo.version>
+        <com.lombok.version>1.18.24</com.lombok.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <hutool.version>5.5.4</hutool.version>
+        <feign-httpclient.version>10.1.0</feign-httpclient.version>
+        <ulisesbocchio.version>3.0.4</ulisesbocchio.version>
+        <h2database.version>1.4.200</h2database.version>
+        <httpcomponents.version>4.5.11</httpcomponents.version>
+        <mysql-connector.version>8.0.19</mysql-connector.version>
+        <maven-compiler-plugin>3.8.0</maven-compiler-plugin>
+        <maven-jar-plugin>3.2.0</maven-jar-plugin>
+        <commons-text-version>1.9</commons-text-version>
+        <log4j.version>2.18.0</log4j.version>
+        <slf4j-version>1.7.36</slf4j-version>
+        <commons-io.version>2.11.0</commons-io.version>
+        <modelmapper.version>3.1.0</modelmapper.version>
+        <aspectjweaver.version>1.9.9.1</aspectjweaver.version>
+        <redisson.version>3.17.3</redisson.version>
+
+        <spring.profiles.active>local</spring.profiles.active>
+        <project.release.version>2.0.0-SNAPSHOT</project.release.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <spring.profiles.active>local</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>sit</id>
+            <properties>
+                <spring.profiles.active>sit</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>release</id>
+            <properties>
+                <spring.profiles.active>sit</spring.profiles.active>
+                <project.release.version>2.0.0</project.release.version>
+            </properties>
+        </profile>
+    </profiles>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${ulisesbocchio.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <!--mybatis-plus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus-generator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2database.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+
+            <!--postgresql-->
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${org.postgresql.version}</version>
+            </dependency>
+
+            <!--p6spy-->
+            <dependency>
+                <groupId>p6spy</groupId>
+                <artifactId>p6spy</artifactId>
+                <version>${p6spy.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>${com.lamx.disruptor.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+            </dependency>
+
+            <!-- lettuce pool 缓存连接池 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
+            </dependency>
+
+            <!--commons -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4.version}</version>
+            </dependency>
+
+            <!--fast_json-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${com.alibaba.fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-client</artifactId>
+                <version>${com.ctrip.framework.apollo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpcomponents.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-httpclient</artifactId>
+                <version>${feign-httpclient.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+
+            <!-- hutool java工具类库  -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.modelmapper</groupId>
+                <artifactId>modelmapper</artifactId>
+                <version>${modelmapper.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectjweaver.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${com.lombok.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- 本地快照 和release 发布 的配置 -->
+    <distributionManagement>
+        <repository>
+            <!-- ID要和MAVEN中conif/setting.xml 中的server保持一致 -->
+            <id>project-repo</id>
+            <name>project-repo</name>
+            <!-- project-repo的url地址 -->
+            <url>${REMOTE_REPO}</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <name>maven-snapshots</name>
+            <url>${REMOTE_SNAPSHOTS}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>central</name>
+            <!-- 配置仓库的地址 -->
+            <url>${REMOTE_PUBLIC}</url>
+        </repository>
+    </repositories>
+
+</project>
