@@ -3,31 +3,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.sdstc</groupId>
-    <artifactId>sdstc-spring-boot-dependencies</artifactId>
-    <version>2.0.0</version>
+    <groupId>cn.texous.open.base</groupId>
+    <artifactId>open-spring-boot-dependencies</artifactId>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
-    <name>sdstc-spring-boot-dependencies</name>
-    <description>The is sdstc-spring-boot-dependencies</description>
+    <name>open-spring-boot-dependencies</name>
+    <description>open-spring-boot-dependencies</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <file.encoding>UTF-8</file.encoding>
+        <default.encoding>UTF-8</default.encoding>
         <java.version>1.8</java.version>
-        <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
-        <spring-boot-maven-plugin.version>2.2.5.RELEASE</spring-boot-maven-plugin.version>
-        <spring-boot-admin.version>2.0.1</spring-boot-admin.version>
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
-        <mybatis-plus-boot-starter.version>3.4.1</mybatis-plus-boot-starter.version>
-        <mybatis-plus-generator.version>3.4.1</mybatis-plus-generator.version>
-        <swagger.version>2.9.2</swagger.version>
+        <spring.boot.version>2.6.8</spring.boot.version>
+        <spring-boot-maven-plugin.version>2.6.8</spring-boot-maven-plugin.version>
+        <spring-cloud.version>2021.0.3</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
+        <mybatis-plus-boot-starter.version>3.5.1</mybatis-plus-boot-starter.version>
+        <mybatis-plus-generator.version>3.5.1</mybatis-plus-generator.version>
+        <swagger.version>3.0.0</swagger.version>
         <p6spy.version>3.8.0</p6spy.version>
         <commons-collections4.version>4.2</commons-collections4.version>
         <com.lamx.disruptor.version>3.3.11</com.lamx.disruptor.version>
         <com.alibaba.fastjson.version>1.2.79</com.alibaba.fastjson.version>
-        <org.postgresql.version>42.2.5</org.postgresql.version>
+        <org.postgresql.version>42.4.0</org.postgresql.version>
         <commons-pool2.version>2.6.1</commons-pool2.version>
         <commons-codec.version>1.13</commons-codec.version>
         <com.ctrip.framework.apollo.version>1.1.1</com.ctrip.framework.apollo.version>
@@ -303,30 +303,33 @@
             </dependency>
 
             <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-dependencies</artifactId>
-                <version>${spring-boot-admin.version}</version>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>de.codecentric</groupId>-->
+<!--                <artifactId>spring-boot-admin-dependencies</artifactId>-->
+<!--                <version>${spring-boot-admin.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
     <!-- 本地快照 和release 发布 的配置 -->
     <distributionManagement>
-        <repository>
-            <!-- ID要和MAVEN中conif/setting.xml 中的server保持一致 -->
-            <id>project-repo</id>
-            <name>project-repo</name>
-            <!-- project-repo的url地址 -->
-            <url>${REMOTE_REPO}</url>
-        </repository>
-
         <snapshotRepository>
-            <id>maven-snapshots</id>
-            <name>maven-snapshots</name>
-            <url>${REMOTE_SNAPSHOTS}</url>
+            <id>nexus-snapshots</id>
+            <url>${NEXUS-SNAPSHOT-URL}</url>
         </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <url>${NEXUS-RELEASE-URL}</url>
+        </repository>
     </distributionManagement>
 
 </project>
