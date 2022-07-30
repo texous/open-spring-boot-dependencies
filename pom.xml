@@ -20,6 +20,7 @@
         <spring-boot-maven-plugin.version>2.6.8</spring-boot-maven-plugin.version>
         <spring-cloud.version>2021.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
+        <spring-cloud-security.version>2.2.5.RELEASE</spring-cloud-security.version>
         <mybatis-plus-boot-starter.version>3.5.1</mybatis-plus-boot-starter.version>
         <mybatis-plus-generator.version>3.5.1</mybatis-plus-generator.version>
         <swagger.version>3.0.0</swagger.version>
@@ -290,6 +291,14 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-security-dependencies</artifactId>
+                <version>${spring-cloud-security.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
