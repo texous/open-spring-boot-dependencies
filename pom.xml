@@ -16,44 +16,39 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <default.encoding>UTF-8</default.encoding>
         <java.version>1.8</java.version>
-        <spring.boot.version>2.6.8</spring.boot.version>
-        <spring-boot-maven-plugin.version>2.6.8</spring-boot-maven-plugin.version>
+        <spring-boot.version>2.7.3</spring-boot.version>
+        <spring-boot-maven-plugin.version>2.7.3</spring-boot-maven-plugin.version>
         <spring-cloud.version>2021.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
-        <spring-cloud-security.version>2.2.5.RELEASE</spring-cloud-security.version>
-        <mybatis-plus-boot-starter.version>3.5.1</mybatis-plus-boot-starter.version>
-        <mybatis-plus-generator.version>3.5.1</mybatis-plus-generator.version>
-        <swagger.version>3.0.0</swagger.version>
-        <p6spy.version>3.8.0</p6spy.version>
-        <commons-collections4.version>4.2</commons-collections4.version>
-        <com.lamx.disruptor.version>3.3.11</com.lamx.disruptor.version>
-        <com.alibaba.fastjson.version>1.2.79</com.alibaba.fastjson.version>
-        <org.postgresql.version>42.4.0</org.postgresql.version>
-        <commons-pool2.version>2.6.1</commons-pool2.version>
-        <commons-codec.version>1.13</commons-codec.version>
-        <com.ctrip.framework.apollo.version>1.1.1</com.ctrip.framework.apollo.version>
-        <com.lombok.version>1.18.24</com.lombok.version>
-        <commons-lang3.version>3.9</commons-lang3.version>
-        <hutool.version>5.5.4</hutool.version>
-        <feign-httpclient.version>10.1.0</feign-httpclient.version>
-        <ulisesbocchio.version>3.0.4</ulisesbocchio.version>
-        <h2database.version>1.4.200</h2database.version>
-        <httpcomponents.version>4.5.11</httpcomponents.version>
-        <mysql-connector.version>8.0.19</mysql-connector.version>
-        <maven-compiler-plugin>3.8.0</maven-compiler-plugin>
-        <maven-jar-plugin>3.2.0</maven-jar-plugin>
+        <mybatis-plus-boot-starter.version>3.5.2</mybatis-plus-boot-starter.version>
+        <mybatis-plus-generator.version>3.5.2</mybatis-plus-generator.version>
+        <p6spy.version>3.9.1</p6spy.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <disruptor.version>3.4.4</disruptor.version>
+        <fastjson.version>1.2.83</fastjson.version>
+        <postgresql.version>42.4.0</postgresql.version>
+        <commons-pool2.version>2.11.1</commons-pool2.version>
+        <commons-codec.version>1.15</commons-codec.version>
+        <apollo-client.version>2.0.1</apollo-client.version>
+        <lombok.version>1.18.24</lombok.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <hutool.version>5.8.5</hutool.version>
+        <feign-httpclient.version>11.9.1</feign-httpclient.version>
+        <jasypt-spring-boot-starter.version>3.0.4</jasypt-spring-boot-starter.version>
+        <h2.version>2.1.214</h2.version>
+        <httpclient5.version>4.5.11</httpclient5.version>
+        <mysql-connector-java.version>8.0.30</mysql-connector-java.version>
         <commons-text.version>1.9</commons-text.version>
         <log4j.version>2.18.0</log4j.version>
         <slf4j-version>1.7.36</slf4j-version>
         <commons-io.version>2.11.0</commons-io.version>
         <modelmapper.version>3.1.0</modelmapper.version>
         <aspectjweaver.version>1.9.9.1</aspectjweaver.version>
-        <redisson.version>3.17.3</redisson.version>
+        <redisson.version>3.17.5</redisson.version>
         <zxing-core.version>3.5.0</zxing-core.version>
         <guava.version>31.1-jre</guava.version>
-        <servlet-api.version>2.5</servlet-api.version>
-        <spring-security-jwt.version>1.1.1.RELEASE</spring-security-jwt.version>
-        <jjwt.version>0.9.1</jjwt.version>
+        <jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version>
+        <nimbus-jose-jwt.version>9.24.1</nimbus-jose-jwt.version>
     </properties>
 
     <profiles>
@@ -77,19 +72,7 @@
             <dependency>
                 <groupId>com.github.ulisesbocchio</groupId>
                 <artifactId>jasypt-spring-boot-starter</artifactId>
-                <version>${ulisesbocchio.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger.version}</version>
+                <version>${jasypt-spring-boot-starter.version}</version>
             </dependency>
 
             <!--mybatis-plus-->
@@ -108,20 +91,20 @@
             <dependency>
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
-                <version>${h2database.version}</version>
+                <version>${h2.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql-connector.version}</version>
+                <version>${mysql-connector-java.version}</version>
             </dependency>
 
             <!--postgresql-->
             <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
-                <version>${org.postgresql.version}</version>
+                <version>${postgresql.version}</version>
             </dependency>
 
             <!--p6spy-->
@@ -134,7 +117,7 @@
             <dependency>
                 <groupId>com.lmax</groupId>
                 <artifactId>disruptor</artifactId>
-                <version>${com.lamx.disruptor.version}</version>
+                <version>${disruptor.version}</version>
             </dependency>
 
             <dependency>
@@ -148,44 +131,39 @@
                 <artifactId>commons-text</artifactId>
                 <version>${commons-text.version}</version>
             </dependency>
-
             <!-- lettuce pool 缓存连接池 -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-pool2</artifactId>
                 <version>${commons-pool2.version}</version>
             </dependency>
-
             <!--commons -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
                 <version>${commons-collections4.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
             </dependency>
 
             <!--fast_json-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>${com.alibaba.fastjson.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.ctrip.framework.apollo</groupId>
-                <artifactId>apollo-client</artifactId>
-                <version>${com.ctrip.framework.apollo.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>guava</artifactId>
-                        <groupId>com.google.guava</groupId>
-                    </exclusion>
-                </exclusions>
+                <version>${fastjson.version}</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
@@ -195,11 +173,20 @@
                 <version>${guava.version}</version>
             </dependency>
 
+            <!-- hutool java工具类库  -->
             <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpclient</artifactId>
-                <version>${httpcomponents.version}</version>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5 -->
+            <dependency>
+                <groupId>org.apache.httpcomponents.client5</groupId>
+                <artifactId>httpclient5</artifactId>
+                <version>${httpclient5.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>io.github.openfeign</groupId>
@@ -208,22 +195,15 @@
             </dependency>
 
             <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>${commons-io.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>commons-codec</groupId>
-                <artifactId>commons-codec</artifactId>
-                <version>${commons-codec.version}</version>
-            </dependency>
-
-            <!-- hutool java工具类库  -->
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${hutool.version}</version>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-client</artifactId>
+                <version>${apollo-client.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <dependency>
@@ -237,13 +217,6 @@
                 <artifactId>log4j-api</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
-
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjweaver</artifactId>
-                <version>${aspectjweaver.version}</version>
-            </dependency>
-
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-core</artifactId>
@@ -256,17 +229,24 @@
                 <version>${slf4j-version}</version>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
             <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>servlet-api</artifactId>
-                <version>${servlet-api.version}</version>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectjweaver.version}</version>
             </dependency>
 
+            <!-- 替换为 jakerta -->
+<!--            <dependency>-->
+<!--                <groupId>javax.servlet</groupId>-->
+<!--                <artifactId>javax.servlet-api</artifactId>-->
+<!--                <version>4.0.1</version>-->
+<!--                <scope>provided</scope>-->
+<!--            </dependency>-->
+            <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${com.lombok.version}</version>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${jakarta.servlet-api.version}</version>
             </dependency>
 
             <dependency>
@@ -275,16 +255,24 @@
                 <version>${zxing-core.version}</version>
             </dependency>
 
+<!--            替换为 nimbus-jose-jwt-->
+<!--            <dependency>-->
+<!--                <groupId>io.jsonwebtoken</groupId>-->
+<!--                <artifactId>jjwt</artifactId>-->
+<!--                <version>${jjwt.version}</version>-->
+<!--            </dependency>-->
+            <!-- https://mvnrepository.com/artifact/com.nimbusds/nimbus-jose-jwt -->
             <dependency>
-                <groupId>org.springframework.security</groupId>
-                <artifactId>spring-security-jwt</artifactId>
-                <version>${spring-security-jwt.version}</version>
+                <groupId>com.nimbusds</groupId>
+                <artifactId>nimbus-jose-jwt</artifactId>
+                <version>${nimbus-jose-jwt.version}</version>
             </dependency>
 
+
             <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
-                <version>${jjwt.version}</version>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
 
             <dependency>
@@ -296,17 +284,9 @@
             </dependency>
 
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-security-dependencies</artifactId>
-                <version>${spring-cloud-security.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.boot.version}</version>
+                <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -318,14 +298,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-<!--            <dependency>-->
-<!--                <groupId>de.codecentric</groupId>-->
-<!--                <artifactId>spring-boot-admin-dependencies</artifactId>-->
-<!--                <version>${spring-boot-admin.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
