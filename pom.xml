@@ -36,7 +36,7 @@
         <feign-httpclient.version>11.9.1</feign-httpclient.version>
         <jasypt-spring-boot-starter.version>3.0.4</jasypt-spring-boot-starter.version>
         <h2.version>2.1.214</h2.version>
-        <httpclient5.version>4.5.11</httpclient5.version>
+        <httpclient5.version>5.1.3</httpclient5.version>
         <mysql-connector-java.version>8.0.30</mysql-connector-java.version>
         <commons-text.version>1.9</commons-text.version>
         <log4j.version>2.18.0</log4j.version>
