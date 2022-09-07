@@ -51,15 +51,18 @@
 
     <profiles>
         <profile>
-            <id>local</id>
+            <id>jdk17</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
-                <spring.profiles.active>local</spring.profiles.active>
+                <java.version>17</java.version>
             </properties>
         </profile>
         <profile>
-            <id>sit</id>
+            <id>jdk8</id>
             <properties>
-                <spring.profiles.active>sit</spring.profiles.active>
+                <java.version>1.8</java.version>
             </properties>
         </profile>
     </profiles>
