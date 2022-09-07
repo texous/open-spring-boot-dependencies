@@ -47,6 +47,7 @@
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
         <nimbus-jose-jwt.version>9.24.1</nimbus-jose-jwt.version>
+        <bcpkix-jdk15on.version>1.70</bcpkix-jdk15on.version>
     </properties>
 
     <profiles>
@@ -257,6 +258,13 @@
                 <groupId>com.google.zxing</groupId>
                 <artifactId>core</artifactId>
                 <version>${zxing-core.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk15on</artifactId>
+                <version>${bcpkix-jdk15on.version}</version>
             </dependency>
 
 <!--            替换为 nimbus-jose-jwt-->
