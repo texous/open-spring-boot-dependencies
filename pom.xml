@@ -44,10 +44,12 @@
         <redisson.version>3.17.5</redisson.version>
         <zxing-core.version>3.5.0</zxing-core.version>
         <guava.version>31.1-jre</guava.version>
-        <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-        <validation-api.version>2.0.1.Final</validation-api.version>
         <nimbus-jose-jwt.version>9.24.1</nimbus-jose-jwt.version>
         <bcpkix-jdk15on.version>1.70</bcpkix-jdk15on.version>
+
+        <hibernate-validator.version>6.2.4.Final</hibernate-validator.version>
+        <jakarta.servlet-api.version>4.0.4</jakarta.servlet-api.version>
+        <jakarta.validation-api.version>2.0.2</jakarta.validation-api.version>
     </properties>
 
     <profiles>
@@ -238,21 +240,26 @@
             </dependency>
 
             <!-- 替换为 jakerta -->
+            <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
             <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>${javax.servlet-api.version}</version>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${jakarta.servlet-api.version}</version>
                 <scope>provided</scope>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
-            <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+            <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
             <dependency>
-                <groupId>javax.validation</groupId>
-                <artifactId>validation-api</artifactId>
-                <version>${validation-api.version}</version>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
             </dependency>
-
+            <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${jakarta.validation-api.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.google.zxing</groupId>
