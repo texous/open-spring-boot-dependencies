@@ -8,6 +8,12 @@
     <version>1.1.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <scm>
+        <connection>scm:svn:https://github.com/texous/open-spring-boot-dependencies.git</connection>
+        <developerConnection>scm:svn:https://github.com/texous/open-spring-boot-dependencies.git</developerConnection>
+        <url>scm:svn:https://github.com/texous/open-spring-boot-dependencies</url>
+    </scm>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
