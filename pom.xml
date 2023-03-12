@@ -304,6 +304,8 @@
                 <groupId>cn.texous.open.base</groupId>
                 <artifactId>open-framework-dependencies</artifactId>
                 <version>${open-framework-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
